@@ -1,20 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppRoutingModule } from "./app-routing.module";
+import { APP_BASE_HREF, CommonModule } from "@angular/common";
+import { AppComponent } from "./app.component";
+import { ScullyLibModule } from "@scullyio/ng-lib";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
+// Modules
+import { PagesModule } from "./modules/index";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ScullyLibModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent],
+	imports: [
+		CommonModule,
+		BrowserModule,
+		PagesModule,
+		AppRoutingModule,
+		ScullyLibModule,
+	],
+	providers: [{ provide: APP_BASE_HREF, useValue: "/" }],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
