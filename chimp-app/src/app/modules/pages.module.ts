@@ -2,6 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes, CanActivate } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     LandingPageComponent,
     AboutPageComponent,
@@ -42,6 +43,8 @@ const routes: Routes = [
     imports: [
         CommonModule,
         HttpClientModule,
+        FormsModule, 
+        ReactiveFormsModule,
         RouterModule.forChild(routes),
         RouterModule.forRoot(routes, { enableTracing: false }),
     ],
