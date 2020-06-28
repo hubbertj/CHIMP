@@ -5,11 +5,13 @@ import { APP_BASE_HREF, CommonModule } from "@angular/common";
 import { AppComponent } from "./app.component";
 import { ScullyLibModule } from "@scullyio/ng-lib";
 
+import { HeaderComponent, FooterComponent } from "./component/index";
+
 // Modules
 import { PagesModule } from "./modules/index";
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, HeaderComponent, FooterComponent],
 	imports: [
 		CommonModule,
 		BrowserModule,
