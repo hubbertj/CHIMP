@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalService } from '../../services/index';
+import { Article } from '../../models/index';
 
 @Component({
   selector: 'app-article-page',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlePageComponent implements OnInit {
 
-  constructor() { }
+	public article: Article = <Article>{};
+
+  constructor(private localService: LocalService) { }
 
   ngOnInit(): void {
   }

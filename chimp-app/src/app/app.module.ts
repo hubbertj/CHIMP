@@ -5,7 +5,7 @@ import { APP_BASE_HREF,CommonModule } from "@angular/common";
 import { AppComponent } from "./app.component";
 import { ScullyLibModule } from "@scullyio/ng-lib";
 
-import { HeaderComponent, FooterComponent } from "./component/index";
+import { HeaderComponent, FooterComponent } from "./components/index";
 
 // Modules
 import { PagesModule } from "./modules/index";
