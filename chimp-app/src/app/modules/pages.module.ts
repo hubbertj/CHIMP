@@ -1,6 +1,7 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes, CanActivate } from "@angular/router";
+import { HttpClientModule } from '@angular/common/http'; 
 import {
     LandingPageComponent,
     AboutPageComponent,
@@ -21,9 +22,9 @@ const routes: Routes = [
         data: { title: "Landing Page" },
     },
     {
-        path: "article",
+        path: "article/:id",
         component: ArticlePageComponent,
-        data: { title: "Landing Page" },
+        data: { title: "Articles" },
     },
     {
         path: "test-center",
@@ -40,6 +41,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
         CommonModule,
+        HttpClientModule,
         RouterModule.forChild(routes),
         RouterModule.forRoot(routes, { enableTracing: false }),
     ],
