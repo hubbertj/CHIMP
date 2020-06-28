@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "chimp-app"
+    }
+  },
+  "defaultProject": "chimp-app",
+  "cli": {
+    "analytics": "430215e1-b14a-4e29-bee2-e65e02fe25b4"
+  }
 }
