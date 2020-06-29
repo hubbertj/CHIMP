@@ -21,9 +21,9 @@ export class LocalService {
     return this._httpClient.get(this.localArticles).pipe(
       map(res => { return <Article[] > res }));
   }
-  public getLocationsFromStateAndZip(state: string, zip: number): Observable < TestLocation[] > {
-  	console.log(environment.findTestCenterUrl);
-    return this._httpClient.get(this.localArticles).pipe(
-      map(res => { return <TestLocation[] > res }));
+  public getLocationsFromState(state: string): Observable < TestLocation[] > {
+  	let locationUri = environment.findTestCenterUrl.replace(":state", state.toLowerCase());
+    return this._httpClient.get(locationUri).pipe(
+      map(res => { return <TestLocation[]> res }));
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocalService } from "../../services/index";
-import { TestLocation } from "../../models/index";
+import { TestLocation, Address } from "../../models/index";
 
 @Component({
   selector: 'app-test-center-page',
@@ -30,20 +30,44 @@ export class TestCenterPageComponent implements OnInit {
       return;
     }
     const { value } = this.searchTestCenterForm;
-    this.testLocations = [];
-
+    try{
+    	this.testLocations = await this.processLocationResponse(value.state, value.zipcode);
+    }catch(err){
+    	this.testLocations = [];
+    }
   }
 
-
+  /**
+   * Handles the response for find a location.
+   * @param  {string}     state       
+   * @param  {number}     zipcode   
+   * @return {Promise <TestLocation[]>} 
+   */
   processLocationResponse(state: string, zipcode:number): Promise <TestLocation[]> {
     return new Promise <TestLocation[]> ((resolve, reject) => {
       this.localService
-        .getLocationsFromStateAndZip(state, zipcode)
+        .getLocationsFromState(state)
         .subscribe((testLocations) => {
           if (testLocations && testLocations.length > 0) {
-          	resolve(testLocations);
+          	const fLocations = testLocations.filter(location => {
+          		let add = false;
+          		if('physical_address' in location){
+          			location.physical_address.forEach(address => {
+          				if('postal_code' in address 
+          					&& address.postal_code.slice(0, 3) === zipcode.toString().slice(0, 3)){
+          					add = true;
+          				}
+          			});
+          		}
+          		return add;
+          	});
+          	if(fLocations.length > 0){
+          		resolve(fLocations);
+          	}else{
+          		reject("no locations found");
+          	}
           } else {
-            reject("no locations found.");
+            reject("no locations found");
           }
         });
     });
