@@ -1,5 +1,25 @@
 <div class="container">
-	<div class="row">
-		<h6>Find a test center near you</h6>
-	</div>
+  <div class="row">
+    <h3 class="col-12">Find a test center near you</h3>
+    <small class="col-12">current only locations in the United States can be viewed</small>
+    <div class="col-12">&nbsp;</div>
+    <div class="col-12">
+      <form [formGroup]="searchTestCenterForm" (ngSubmit)="onSearch()">
+        <div class="form-row">
+          <div class="form-group col-4">
+            <input type="number" placeholder="zipcode" formControlName="zipcode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zipcode.errors }" />
+          </div>
+          <div class="form-group col">
+            <input type="text" placeholder="state" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+          </div>
+          <div class="form-group col">
+            <button class="btn btn-primary mr-1">Find</button>
+          </div>
+        </div>
+      </form>
+    </div>
+	<div class="col-12" *ngIf="testLocations.length === 0" style="min-height: 200px;">&nbsp;</div>
+    <div class="col-12" *ngIf="testLocations.length > 0" style="min-height: 200px;">
+    </div>
+  </div>
 </div>
