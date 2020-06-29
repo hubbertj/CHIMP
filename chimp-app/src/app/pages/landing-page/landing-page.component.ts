@@ -58,12 +58,12 @@ export class LandingPageComponent implements OnInit {
    * Search submit
    */
   onSearch(): void {
-    console.log("ere");
     // stop here if form is invalid
     if (this.searchForm.invalid) {
       return;
     }
-
+    alert('WIP sorry this will implemented in the future, stay tune.')
+    return;
   }
 
 }
