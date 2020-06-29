@@ -6,8 +6,8 @@
   </div>
   <div class="col-12">&nbsp;</div>
   <h6>Latest&nbsp;News</h6>
-  <div class="d-flex flex-row">
-    <div *ngFor="let article of articles" class="p-2" style="min-width: 250px;">
+  <div class="d-flex flex-wrap">
+    <div *ngFor="let article of articles" class="p-2" style="width: 250px;">
       <div class="card">
         <a href="article/{{article.id}}" class="tt btn-tt-press"><img [attr.src]="article.imageUrl || 'assets/img/test-news-img.png'" class="card-img-top" width="100px" height="200px" alt="News"></a>
         <div class="card-body">

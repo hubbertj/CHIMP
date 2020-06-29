@@ -2,15 +2,24 @@
 {
   "id": 1,
   "title": "What is CHIMP?",
-  "content": "<p class=\"leads\" >mor about this</p>"
+  "imageUrl": "http://chimp-dev.s3-website-us-west-1.amazonaws.com/assets/img/Monkey-512.png",
+  "link": "http://chimp-dev.s3-website-us-west-1.amazonaws.com/about",
+  "content": "<p class=\"leads\">CHIMP (COVID-19 Heat Map Application) is a interactive program used for providing the latest news for COVID-19. Originally created as Regis University senior capstone project. This sites intention is to filter through all the misinformation about COVID-19 and help people get to the truth. CHIMP also offers live data for COVID-19 status in your area. Stay in the known and Stay safe</p> <br><p class=\"leads\">We live in very strange time and it's nice to have a site which provides data with no filter. News stations want to increase rates so they over information to better help their agenda. We are CHIMP feel data should speak for itself, so we offer just that pure data. Keep checking back as this is a WIP (work in progress) and new features will be added weekly.</p> <br>",
+  "seo": ["COVID-19", "Test center", "coronavirus"]
 },
 {
   "id": 2,
   "title": "How deadly is COVID-19?",
-  "content": "<p class=\"leads\" >mor about this</p>"
+  "imageUrl": "https://chimp-dev.s3-us-west-1.amazonaws.com/assets/img/how_deadly_convid-19.jpg",
+  "link": "https://www.nature.com/articles/d41586-020-01738-2",
+  "content": "<p class=\"leads\">One of the most crucial questions about an emerging infectious disease such as the new coronavirus is how deadly it is. After months of collecting data, scientists are getting closer to an answer.</p><p class=\"leads\">Researchers use a metric called infection fatality rate (IFR) to calculate how deadly a new disease is. It is the proportion of infected people who will die as a result, including those who don’t get tested or show symptoms.</p><p class=\"leads\">“The IFR is one of the important numbers alongside the herd immunity threshold, and has implications for the scale of an epidemic and how seriously we should take a new disease,” says Robert Verity, an epidemiologist at Imperial College London</p>",
+  "seo": ["COVID-19", "Test center", "coronavirus", "deadly COVID-19"]
 },
 {
   "id": 3,
   "title": "Know the Symptoms",
-  "content": "<p class=\"leads\" >mor about this</p>"
+  "imageUrl": "https://chimp-dev.s3-us-west-1.amazonaws.com/assets/img/COVID19-symptoms-thumb.png",
+  "link": "https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html",
+  "content": "<p class=\"leads\">Check out more from the link</p>",
+  "seo": ["COVID-19", "Test center", "coronavirus", "symptoms COVID-19"]
 }]
