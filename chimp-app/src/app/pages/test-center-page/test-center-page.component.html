@@ -18,9 +18,49 @@
         </div>
       </form>
     </div>
-	<div class="col-12" *ngIf="testLocations.length === 0" style="min-height: 200px;">&nbsp;</div>
+    <div class="col-12" *ngIf="testLocations.length === 0" style="min-height: 200px;">No locations found</div>
     <div class="col-12" *ngIf="testLocations.length > 0" style="min-height: 200px;">
-    	{{ testLocations }}
+      <div *ngFor="let location of testLocations" class="p-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ location.name }}</h5>
+            <div *ngFor="let address of location.physical_address" class="p-2">
+              <span>Address: {{address.address_1}} {{address.city}} {{address.postal_code}}</span>
+            </div>
+            <div *ngFor="let phone of location.phones" class="p-2">
+            	<div class="" *ngIf="phone.number !== 'None'">
+            		<span>type:&nbsp;</span>{{phone.type}}<br>
+            		<span>number:&nbsp;</span>{{phone.number}}<br>
+            		<span>language:&nbsp;</span>{{phone.language}}
+            	</div> 
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<!--  export interface Address {
+    id: number;
+    location_id: number;
+    address_1: string;
+    city: string;
+    postal_code: string;
+    region: string;
+    state_province: string;
+    country: string;
+  }
+ -->
+<!--  export interface TestLocation {
+   id: number;
+   organization_id: number;
+   name: string;
+   alternate_name: string;
+   description: string;
+   updated: string;
+   featured: boolean;
+   physical_address: Address[];
+   phones: Phone[];
+   regular_schedule: Schedule[];
+ }
+ -->
